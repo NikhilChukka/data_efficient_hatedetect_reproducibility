@@ -141,7 +141,7 @@ def evaluate(emb, label, model, mode='train'):
 
 # df_train = pd.read_csv("/home/jupyter/data/implicit-hate-corpus/latent_train.tsv", sep='\t')
 # train_labels = np.array(df_train['class'])
-df_test = pd.read_csv("/home/jupyter/data/test_data/hx_test.tsv", sep='\t')
+df_test = pd.read_csv("data_efficient_hatedetect_reproducibility/data/hatexplain/hx_test.tsv", sep='\t')
 gt_labels = np.array(df_test['label'])
 
 # df_train = pd.read_csv("/home/jupyter/data/train_data/hx_train.tsv", sep='\t')
@@ -213,8 +213,8 @@ def trainIters(model, epochs, train_loader, test_loader, learning_rate=1e-3, log
     
 # train_data = HateData(data_path="/home/jupyter/data/implicit-hate-corpus/", split='train', lang=lang, layer=layer)
 # val_data = HateData(data_path="/home/jupyter/data/implicit-hate-corpus/", split='test', lang=lang, layer=layer)
-train_data = HateData(data_path="/home/jupyter/data/train_data/", split='train', lang=lang, layer=layer)
-val_data = HateData(data_path="/home/jupyter/data/test_data/", split='test', lang=lang, layer=layer)
+train_data = HateData(data_path="data_efficient_hatedetect_reproducibility/data/hatexplain/", split='train', lang=lang, layer=layer)
+val_data = HateData(data_path="data_efficient_hatedetect_reproducibility/data/hatexplain/", split='test', lang=lang, layer=layer)
 
 BS = 64
 dataload = DataLoader(train_data, batch_size=BS, shuffle=True)
